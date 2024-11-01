@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="max_speed" default="1" />
+  <arg name="max_speed_turn" default="0.4" />
+  <arg name="min_speed" default="0.2" />
+
+  <arg name="kp_psi" default="15" />
+  <arg name="ki_psi" default="0" />
+  <arg name="kd_psi" default="3" />
+  <arg name="kp_u" default="50" />
+  <arg name="ki_u" default="0" />
+  <arg name="kd_u" default="0" />
+
+  <node pkg="los_pid_follow" type="los_pid_node" name="los_pid_node" output="screen">
+    <param name="max_speed" value="$(arg max_speed)" />
+    <param name="max_speed_turn" value="$(arg max_speed_turn)" />
+    <param name="min_speed" value="$(arg min_speed)" />
+    <param name="kp_psi" value="$(arg kp_psi)" />
+    <param name="ki_psi" value="$(arg ki_psi)" />
+    <param name="kd_psi" value="$(arg kd_psi)" />
+    <param name="kp_u" value="$(arg kp_u)" />
+    <param name="ki_u" value="$(arg ki_u)" />
+    <param name="kd_u" value="$(arg kd_u)" />
+
+  </node>
+
+</launch>
